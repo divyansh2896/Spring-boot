@@ -40,8 +40,7 @@ public class ApplicationController {
         return application.get();
     }
 
-    // @RequestMapping(value = "/user/add", /* consumes="application/json", */
-    // method = RequestMethod.POST)
+   
     @PostMapping(value="/add")
     public ApplicationPolicy createApplication(@RequestBody ApplicationPolicy addapplication) {
         System.out.println(this.getClass().getSimpleName() + " - Create new application method is invoked.");
@@ -50,7 +49,7 @@ public class ApplicationController {
     }
 
     @PutMapping(value = "/update/{application_id}")
-    // @RequestMapping(value = "/user/update/{user_id}", method = RequestMethod.PUT)
+  
     public ApplicationPolicy updateApplication(@RequestBody ApplicationPolicy updateapplication, @PathVariable int application_id) throws Exception {
         System.out.println(this.getClass().getSimpleName() + " - Update application details by id is invoked.");
 
@@ -61,7 +60,7 @@ public class ApplicationController {
     }
 
     @DeleteMapping(value="/delete/{application_id}")
-    //@RequestMapping(value = "/user/delete/{user_id}", method = RequestMethod.DELETE)
+    
     public void deleteApplicationById(@PathVariable int application_id) throws Exception {
         System.out.println(this.getClass().getSimpleName() + " - Delete user by id is invoked.");
 
